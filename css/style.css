@@ -113,6 +113,10 @@ marquee{
 	font-weight: bold;
 }
 
+.autor{
+	font-size: 15px;
+}
+
 @media only screen and (max-width: 1148px) {
   .quadrado{
   	width: 40%;
