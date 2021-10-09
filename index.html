@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Layout responsivo | LuizEduLima</title>
+
+  <!-- Icone usado no título da página -->
+  <link rel="sortcut icon" href="images/musica.ico" type="image/x-icon"/>
+
+  <!-- Linkando arquivo de estilização externo -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div class="main">
+    <div class="quadrado">
+      <img src="images/topo.svg">
+      <h1>Resumo do Pedido</h1>
+
+      <p>Agora você pode ouvir milhões de músicas, audiolivros e podcasts em qualquer dispositivo de onde quiser!</p>
+
+      <div class="plano">
+        <div class="icone"></div>
+        <div class="texto"><b>Plano Anual</b><p>R$35,00/ano</p></div>
+        <a href="#">Mudar</a>
+      </div>
+
+      <div class="botao">
+        <p>Prossiga para o pagamento</p>
+      </div>
+
+      <marquee>Aperte no botão acima para reproduzir musica</marquee>
+
+      <div class="cancelar">
+        <p>Cancelar Pedido</p>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    //Musica que será reproduzida ao aperta o botão:
+    const musica = new Audio('musica/Daft Punk - Get Lucky.mp3');
+    let btn = $('.botao');
+    let parar = 0
+    let mensagem = $('marquee');
+
+    btn.click(function(){
+      console.log(parar)
+      if (parar == 0) {
+        musica.play()
+        parar += 1
+        mensagem.html('Reproduzindo: Daft Punk - Get Lucky')
+
+      }else{
+        musica.pause()
+        parar -= 1
+        mensagem.html('Musica Pausada')
+      }
+    })
+  </script>
+</body>
+</html>
